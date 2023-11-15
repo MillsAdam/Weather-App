@@ -1,6 +1,5 @@
 package com.example;
 
-import java.util.Base64;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -8,6 +7,7 @@ import java.util.Scanner;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.bouncycastle.util.encoders.Base64;
 
 import com.example.dao.JdbcUserDao;
 import com.example.dao.UserDao;
@@ -65,7 +65,7 @@ public class App
      */
     public App(DataSource datasource) {
         passwordHasher = new PasswordHasher();
-        userDao = new UserDao(datasource);
+        userDao = new JdbcUserDao(datasource);
         userInput = new Scanner(System.in);
     }
 
@@ -193,7 +193,7 @@ public class App
         }
         String storedSalt = passwordAndSalt.get("salt");
         String storedPassword = passwordAndSalt.get("password");
-        String hashedPassword = passwordHasher.computeHash(password, Base64.getDecoder().decode(storedSalt));
+        String hashedPassword = passwordHasher.computeHash(password, Base64.decode(storedSalt));
         return storedPassword.equals(hashedPassword);
      }
 
@@ -214,7 +214,7 @@ public class App
         // generate hashed password and salt
         byte[] salt = passwordHasher.generateRandomSalt();
         String hashedPassword = passwordHasher.computeHash(password, salt);
-        String saltString = new String(Base64.getEncoder().encode(salt));
+        String saltString = new String(Base64.encode(salt));
 
         User user = userDao.createUser(username, hashedPassword, saltString);
         System.out.println("Successfully created user " + user.getUsername() + " with id " + user.getUserId() + "!");

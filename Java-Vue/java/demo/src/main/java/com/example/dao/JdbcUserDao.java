@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.sql.DataSource;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -13,9 +15,10 @@ import com.example.models.User;
 public class JdbcUserDao implements UserDao {
     private final JdbcTemplate jdbcTemplate;
 
-    public JdbcUserDao(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
+    public JdbcUserDao(DataSource datasource) {
+        this.jdbcTemplate = new JdbcTemplate(datasource);
     }
+
 
     @Override
     public User createUser(String username, String hashedPassword, String saltString) {

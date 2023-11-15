@@ -2,9 +2,9 @@ DROP TABLE IF EXISTS weather, users;
 
 CREATE TABLE users (
     id serial PRIMARY KEY,
-    username VARCHAR ( 50 ) UNIQUE NOT NULL,
-    password VARCHAR ( 50 ) NOT NULL,
-    salt VARCHAR ( 50 ) NOT NULL
+    username VARCHAR ( 50 ) UNIQUE NOT NULL, -- Username
+    password VARCHAR ( 50 ) NOT NULL, -- Password (hashed, not plain-text)
+    salt VARCHAR ( 50 ) NOT NULL -- Password salt
 );
 
 CREATE TABLE weather (
