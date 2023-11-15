@@ -1,6 +1,10 @@
 package com.example.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class LatLon {
+    @JsonProperty("zip")
+    private int zipCode; // zip code
     private String lat; // latitude
     private String lon; // longitude
     private String name; // city name
@@ -8,11 +12,15 @@ public class LatLon {
     // not necessary, java will create a default constructor for us
     public LatLon() {}
 
-    public LatLon(String lat, String lon, String name) {
+    public LatLon(int zipCode, String lat, String lon, String name) {
+        this.zipCode = zipCode;
         this.lat = lat;
         this.lon = lon;
         this.name = name;
     }
+
+    public int getZipCode() { return zipCode; }
+    public void setZipCode(int zipCode) { this.zipCode = zipCode; }
 
     public String getLat() { return lat; }
     public void setLat(String lat) { this.lat = lat; }
@@ -25,6 +33,6 @@ public class LatLon {
 
     @Override
     public String toString() {
-        return String.format("LatLon[lat=%s, lon=%s, name=%s]", lat, lon, name);
+        return String.format("LatLon[zipCode=%s, lat=%s, lon=%s, name=%s]", zipCode, lat, lon, name);
     }
 }

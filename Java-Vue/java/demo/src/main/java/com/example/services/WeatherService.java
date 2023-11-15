@@ -3,7 +3,7 @@ package com.example.services;
 import org.springframework.web.client.RestTemplate;
 import com.example.models.LatLon;
 import com.example.models.Weather;
-import com.example.models.WeatherObject;
+// import com.example.models.WeatherObject;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

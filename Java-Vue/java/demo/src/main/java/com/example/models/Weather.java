@@ -9,6 +9,8 @@ public class Weather {
     @JsonProperty("feels_like")
     private double feelsLike;
 
+    public Weather() {}
+
     public Weather(String main, String description, double temp, double feelsLike) {
         this.main = main;
         this.description = description;

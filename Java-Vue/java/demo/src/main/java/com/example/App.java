@@ -11,6 +11,8 @@ import org.bouncycastle.util.encoders.Base64;
 
 import com.example.dao.JdbcUserDao;
 import com.example.dao.UserDao;
+import com.example.dao.JdbcWeatherDao;
+import com.example.dao.WeatherDao;
 import com.example.models.LatLon;
 import com.example.models.User;
 import com.example.models.Weather;
@@ -22,6 +24,7 @@ public class App
 {
 
     private final UserDao userDao;
+    private final WeatherDao weatherDao;
     private final Scanner userInput;
     private final PasswordHasher passwordHasher;
     private User loggedInUser;
@@ -61,12 +64,13 @@ public class App
     /** 
      * Set up the DAOs and scanner for the application. 
      * 
-     * @param datasource the connection information to the SQL database
+     * @param dataSource the connection information to the SQL database
      */
-    public App(DataSource datasource) {
+    public App(DataSource dataSource) {
         passwordHasher = new PasswordHasher();
-        userDao = new JdbcUserDao(datasource);
+        userDao = new JdbcUserDao(dataSource);
         userInput = new Scanner(System.in);
+        weatherDao = new JdbcWeatherDao(dataSource);
     }
 
     /** 
@@ -89,7 +93,9 @@ public class App
                     showWeatherMenu();
                 }
             } else if ("q".equalsIgnoreCase(option)) {
+                System.out.println();
                 System.out.println("Thanks for using the Weather App!");
+                System.out.println();
                 break;
             } else {
                 System.out.println(option + " is not a valid option.  Please select again.");
@@ -108,7 +114,9 @@ public class App
             } else if ("s".equalsIgnoreCase(option)) {
                 getWeather(zipCode);
             } else if ("q".equalsIgnoreCase(option)) {
+                System.out.println();
                 System.out.println("Thanks for using the Weather App!");
+                System.out.println();
                 break;
             } else {
                 System.out.println(option + " is not a valid option.  Please select again.");
@@ -120,16 +128,23 @@ public class App
         if (zipCode == 0) {
             System.out.println("Invalid zip code or zip code not entered!");
         } else {
-            System.out.println("User is " + loggedInUser.getUserId() + " and zip is " + zipCode);
-            LatLon latLon = weatherService.getLatLon(zipCode + "");
+            System.out.println();
+            System.out.println("User ID is " + loggedInUser.getUserId() + " and Zip Code is " + zipCode);
+            LatLon latLon = weatherService.getLatLon(String.valueOf(zipCode));
             Weather weather = weatherService.getWeather(latLon);
-            System.out.println(weather);
+            // System.out.println(weather);
+            Weather weatherFromDB = weatherDao.createWeather(weather, loggedInUser, latLon);
+            System.out.println("Today's weather: " + weatherFromDB.getDescription());
+            System.out.println("The temperature is " + weatherFromDB.getTemp() + " degrees Fahrenheit");
+            System.out.println("The temperature feels like " + weatherFromDB.getFeelsLike() + " degrees Fahrenheit");
+            System.out.println();
         }
     }
 
     private void printWeatherMenu() {
+        System.out.println();
         System.out.println("Logged in user Menu");
-        System.out.println("============");
+        System.out.println("===========================");
         System.out.println("(A)dd a zip code");
         System.out.println("(S)how weather");
         System.out.println("(Q)uit");
@@ -141,6 +156,7 @@ public class App
         int zipCode = 0;
 
         while(!isValid) {
+            System.out.println();
             System.out.print("Enter zip code: ");
             String zipCodeString = userInput.nextLine();
             try {
@@ -163,8 +179,9 @@ public class App
      * changed output from void to boolean to return true if login successful, false otherwise
      */
     private boolean loginUser() {
+        System.out.println();
         System.out.println("Login");
-        System.out.println("=====");
+        System.out.println("===========================");
         System.out.print("Enter username: ");
         String username = userInput.nextLine();
         System.out.print("Enter password: ");
@@ -247,7 +264,7 @@ public class App
 
         List<User> users = userDao.getUsers();
         System.out.println("List of Users");
-        System.out.println("=============");
+        System.out.println("===========================");
         for (User user : users) {
             System.out.println(user.getUserId() + ": " + user.getUsername());
         }
@@ -276,6 +293,7 @@ public class App
 
         System.out.println("Welcome " + name + "!");
         System.out.println("What would you like to do?");
+        System.out.println();
         System.out.flush();
         String selection;
         try {

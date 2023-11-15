@@ -15,8 +15,8 @@ import com.example.models.User;
 public class JdbcUserDao implements UserDao {
     private final JdbcTemplate jdbcTemplate;
 
-    public JdbcUserDao(DataSource datasource) {
-        this.jdbcTemplate = new JdbcTemplate(datasource);
+    public JdbcUserDao(DataSource dataSource) {
+        this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
 
