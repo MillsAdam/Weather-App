@@ -14,7 +14,7 @@ import com.example.dao.UserDao;
 import com.example.models.LatLon;
 import com.example.models.User;
 import com.example.models.Weather;
-import com.example.models.WeatherObject;
+// import com.example.models.WeatherObject;
 import com.example.security.PasswordHasher;
 import com.example.services.WeatherService;
 

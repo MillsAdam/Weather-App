@@ -1,11 +1,14 @@
 package com.example.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Weather {
     private int id;
     private String main;
     private String description;
     private String icon;
     private double temp;
+    @JsonProperty("feels_like")
     private double feelsLike;
 
     public Weather(String main2, String description2, double temp, double feelsLike) {} // changed to match return in WeatherService.java

@@ -14,5 +14,6 @@ CREATE TABLE weather (
     main VARCHAR ( 50 ) NOT NULL,
     description VARCHAR ( 50 ) NOT NULL,
     temperature NUMERIC ( 5, 2 ),
+    feels_like NUMERIC ( 5, 2 ),
     CONSTRAINT fk_user_id FOREIGN KEY (user_id) REFERENCES users (id)
 );
