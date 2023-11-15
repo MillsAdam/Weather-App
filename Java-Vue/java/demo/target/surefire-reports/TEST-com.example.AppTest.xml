@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.AppTest" time="0.005" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.AppTest" time="0.006" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.specification.version" value="11"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\test-classes;C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\classes;C:\Users\adamm\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-core\5.2.6.RELEASE\spring-core-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-jcl\5.2.6.RELEASE\spring-jcl-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-web\5.2.6.RELEASE\spring-web-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-beans\5.2.6.RELEASE\spring-beans-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;"/>
+    <property name="java.class.path" value="C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\test-classes;C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\classes;C:\Users\adamm\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-core\5.2.6.RELEASE\spring-core-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-jcl\5.2.6.RELEASE\spring-jcl-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-web\5.2.6.RELEASE\spring-web-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-beans\5.2.6.RELEASE\spring-beans-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;C:\Users\adamm\.m2\repository\io\github\cdimascio\dotenv-java\3.0.0\dotenv-java-3.0.0.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -17,9 +17,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11\bin"/>
-    <property name="sun.java.command" value="C:\Users\adamm\AppData\Local\Temp\surefire517358867325854402\surefirebooter-20231114142022669_3.jar C:\Users\adamm\AppData\Local\Temp\surefire517358867325854402 2023-11-14T14-20-22_372-jvmRun1 surefire-20231114142022669_1tmp surefire_0-20231114142022669_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\adamm\AppData\Local\Temp\surefire11726307391662589677\surefirebooter-20231114194845589_3.jar C:\Users\adamm\AppData\Local\Temp\surefire11726307391662589677 2023-11-14T19-48-45_456-jvmRun1 surefire-20231114194845589_1tmp surefire_0-20231114194845589_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\test-classes;C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\classes;C:\Users\adamm\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-core\5.2.6.RELEASE\spring-core-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-jcl\5.2.6.RELEASE\spring-jcl-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-web\5.2.6.RELEASE\spring-web-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-beans\5.2.6.RELEASE\spring-beans-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\test-classes;C:\Users\adamm\workspace\Weather-App\Java-Vue\java\demo\target\classes;C:\Users\adamm\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-core\5.2.6.RELEASE\spring-core-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-jcl\5.2.6.RELEASE\spring-jcl-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-web\5.2.6.RELEASE\spring-web-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\org\springframework\spring-beans\5.2.6.RELEASE\spring-beans-5.2.6.RELEASE.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.0\jackson-core-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.0\jackson-databind-2.10.0.jar;C:\Users\adamm\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.0\jackson-annotations-2.10.0.jar;C:\Users\adamm\.m2\repository\io\github\cdimascio\dotenv-java\3.0.0\dotenv-java-3.0.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\adamm"/>
     <property name="user.language" value="en"/>
@@ -33,7 +33,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\adamm\AppData\Local\Temp\surefire517358867325854402\surefirebooter-20231114142022669_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\adamm\AppData\Local\Temp\surefire11726307391662589677\surefirebooter-20231114194845589_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.19+9-LTS-224"/>
@@ -60,5 +60,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testApp" classname="com.example.AppTest" time="0.001"/>
+  <testcase name="testApp" classname="com.example.AppTest" time="0.002"/>
 </testsuite>

@@ -1,1 +1,6 @@
+com\example\models\Main.class
+com\example\models\WeatherObject.class
+com\example\models\Weather.class
+com\example\services\WeatherService.class
+com\example\models\LatLon.class
 com\example\App.class
