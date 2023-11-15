@@ -12,18 +12,18 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 public class WeatherService {
     private RestTemplate restTemplate = new RestTemplate();
-    private static final String API_URL = "http://api.openweathermap.org/geo/1.0/zip";
+    private static final String WEATHER_API_URL = "http://api.openweathermap.org/";
 
     private static final Dotenv dotenv = Dotenv.load();
     private static final String API_KEY = dotenv.get("OPEN_WEATHER_API_KEY");
 
     public LatLon getLatLon(String zipCode) {
-        String url = API_URL + "?zip=" + zipCode + "&appid=" + API_KEY;
+        String url = WEATHER_API_URL + "geo/1.0/zip?zip=" + zipCode + "&appid=" + API_KEY;
         return restTemplate.getForObject(url, LatLon.class);
     }
 
     public Weather getWeather(LatLon latLon) {
-        String url = API_URL + "data/2.5/weather?lat=" + latLon.getLat() + "&lon=" + latLon.getLon() + "&units=imperial&appid=" + API_KEY;
+        String url = WEATHER_API_URL + "data/2.5/weather?lat=" + latLon.getLat() + "&lon=" + latLon.getLon() + "&units=imperial&appid=" + API_KEY;
         String response = restTemplate.getForObject(url, String.class);
 
         ObjectMapper objectMapper = new ObjectMapper();

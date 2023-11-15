@@ -84,8 +84,10 @@ public class App
             } else if ("s".equalsIgnoreCase(option)) {
                 showUsers();
             } else if ("l".equalsIgnoreCase(option)) {
-                loginUser();
-                showWeatherMenu();
+                boolean loggedIn = loginUser();
+                if (loggedIn) {
+                    showWeatherMenu();
+                }
             } else if ("q".equalsIgnoreCase(option)) {
                 System.out.println("Thanks for using the Weather App!");
                 break;
@@ -157,8 +159,10 @@ public class App
      * You don't know what's specifically wrong about the login, just that the combined username & password are invalid.
      * You don't want to give an attacker any information about what they got right or wrong.
      * Information like that is gold to an attacker because then they know what they're getting right and what they're getting wrong.
+     * 
+     * changed output from void to boolean to return true if login successful, false otherwise
      */
-    private void loginUser() {
+    private boolean loginUser() {
         System.out.println("Login");
         System.out.println("=====");
         System.out.print("Enter username: ");
@@ -173,9 +177,11 @@ public class App
             loggedInUser.setUserId(user.getUserId());
             System.out.println("Welcome " + username + "!");
             System.out.println();
+            return true; // Login successful
         } else {
             System.out.println("Invalid username/password combination, please try again.");
             System.out.println();
+            return false; // Login unsuccessful
         }
     }
 

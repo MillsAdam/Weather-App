@@ -42,7 +42,7 @@ public class JdbcUserDao implements UserDao {
     @Override
     public Map<String, String> getPasswordAndSaltByUsername(String username) {
         Map<String, String> passwordAndSalt = new HashMap<>();
-        String sqlSearchForUser = "SELECT sale, password FROM users WHERE UPPER(username) = ?;";
+        String sqlSearchForUser = "SELECT salt, password FROM users WHERE UPPER(username) = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, username.toUpperCase());
         if (results.next()) {
             passwordAndSalt.put("salt", results.getString("salt"));
