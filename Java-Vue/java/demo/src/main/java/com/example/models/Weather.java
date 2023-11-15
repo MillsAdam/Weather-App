@@ -5,8 +5,10 @@ public class Weather {
     private String main;
     private String description;
     private String icon;
+    private double temp;
+    private double feelsLike;
 
-    public Weather() {}
+    public Weather(String main2, String description2, double temp, double feelsLike) {} // changed to match return in WeatherService.java
 
     public Weather(int id, String main, String description, String icon) {
         this.id = id;
@@ -27,8 +29,19 @@ public class Weather {
     public String getIcon() { return icon; }
     public void setIcon(String icon) { this.icon = icon; }
 
+    public double getTemp() { return temp; }
+    public void setTemp(double temp) { this.temp = temp; }
+
+    public double getFeelsLike() { return feelsLike; }
+    public void setFeelsLike(double feelsLike) { this.feelsLike = feelsLike; }
+
+    // @Override
+    // public String toString() {
+    //     return String.format("Weather[id=%s, main=%s, description=%s, icon=%s]", id, main, description, icon);
+    // }
+
     @Override
     public String toString() {
-        return String.format("Weather[id=%s, main=%s, description=%s, icon=%s]", id, main, description, icon);
+        return String.format("Weather[main=%s, description=%s, temp=%s, feelsLike=%s]", main, description, temp, feelsLike);
     }
 }
