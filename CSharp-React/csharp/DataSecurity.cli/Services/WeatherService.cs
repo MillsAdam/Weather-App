@@ -8,11 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 using RestSharp;
-using csharp.Models;
+using WeatherDB.Cli.Models;
 using dotenv.net;
+using System.Net.Http;
 
 
-namespace csharp.Services
+namespace WeatherDB.Cli.Services
 {
     public class WeatherService
     {
@@ -51,8 +52,6 @@ namespace csharp.Services
         private void CheckForError(IRestResponse response)
         {
             if (!response.IsSuccessful) {
-                Console.WriteLine($"Error: {response.StatusCode}");
-                Console.WriteLine($"Content: {response.Content}");
                 throw new HttpRequestException($"There was an error in the call to the server.");
             }
         }

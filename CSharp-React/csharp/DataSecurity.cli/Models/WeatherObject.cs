@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace csharp.Models
+namespace WeatherDB.Cli.Models
 {
     public class WeatherObject
     {

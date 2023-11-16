@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using Newtonsoft.Json;
 
-namespace csharp.Models
+namespace WeatherDB.Cli.Models
 {
     /// <summary>
     ///   This class represents the data returned from the OpenWeatherMap API.
@@ -21,6 +21,9 @@ namespace csharp.Models
 
         [JsonProperty("lon")]
         public double Lon { get; set; }
+
+        [JsonProperty("population")]
+        public int Population { get; set; }
 
         [JsonProperty("name")]
         public string? Name { get; set; } // added ? to make this nullable

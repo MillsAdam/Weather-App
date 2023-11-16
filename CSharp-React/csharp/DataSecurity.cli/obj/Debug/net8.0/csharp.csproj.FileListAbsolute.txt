@@ -38,3 +38,17 @@ C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\obj\De
 C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\obj\Debug\net8.0\csharp.pdb
 C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\obj\Debug\net8.0\csharp.genruntimeconfig.cache
 C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\obj\Debug\net8.0\ref\csharp.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\adamm\workspace\Weather-App\CSharp-React\csharp\DataSecurity.cli\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

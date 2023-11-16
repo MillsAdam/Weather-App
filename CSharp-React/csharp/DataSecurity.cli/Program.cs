@@ -1,33 +1,29 @@
-﻿using csharp.Models;
-using csharp.Services;
+﻿
+using WeatherDB.Cli.DAO;
+using WeatherDB.Cli.Security;
+using Microsoft.Extensions.Configuration;
 
-public class Program 
+namespace WeatherDB.Cli 
 {
-    private static void Main(string[] args) 
+    public class Program
     {
-        WeatherService weatherService = new WeatherService();
+        private static void Main(string[] args) 
+        {
+            IConfiguration config = new ConfigurationBuilder()
+                .AddJsonFile("appsettings.json")
+                .Build();
 
-        Console.Write("Enter Zip Code: ");
-        string zipCode = Console.ReadLine();
-        if (zipCode == null) {
-            Console.WriteLine("Zip Code cannot be null.");
-            return;
+            string connectionString = config.GetConnectionString("WeatherDBConnection");
+
+            IUserDao userDao = new UserSqlDao(connectionString);
+            IWeatherDao weatherDao = new WeatherSqlDao(connectionString);
+
+            IPasswordHasher passwordHasher = new PasswordHasher();
+            WeatherDB application = new WeatherDB(userDao, passwordHasher, weatherDao);
+
+            application.Run();
         }
-
-        LatLon latLon = weatherService.GetLatLon(zipCode);
-
-        Console.WriteLine($"You are in {latLon.Name}");
-        Console.WriteLine($"Your latitude is {latLon.Lat}");
-        Console.WriteLine($"Your longitude is {latLon.Lon}");
-        System.Console.WriteLine();
-
-        WeatherObject weatherObject = weatherService.GetWeather(latLon);
-
-        System.Console.WriteLine($"The weather is {weatherObject.weather[0].Description}.");
-        System.Console.WriteLine($"The temperature is {weatherObject.main.Temp} degrees Fahrenheit.");
-        System.Console.WriteLine($"The feels like temperature is {weatherObject.main.Feels_like} degrees Fahrenheit.");
-        System.Console.WriteLine($"The humidity is {weatherObject.main.Humidity}%.");
-        System.Console.WriteLine($"The wind speed is {weatherObject.wind.Speed} mph.");
-        System.Console.WriteLine();
     }
+
+
 }
