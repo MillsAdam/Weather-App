@@ -16,10 +16,9 @@ namespace csharp.Services
 {
     public class WeatherService
     {
-        // private const string API_KEY = "896d7ca05ae3d29c18cd4b2c9ed6a815";
         private readonly string API_KEY;
         private const string WEATHER_API_URL = "https://api.openweathermap.org/";
-        private static RestClient restClient;
+        private static RestClient? restClient; // added ? to declare as nullable
 
         public WeatherService()
         {
@@ -52,6 +51,8 @@ namespace csharp.Services
         private void CheckForError(IRestResponse response)
         {
             if (!response.IsSuccessful) {
+                Console.WriteLine($"Error: {response.StatusCode}");
+                Console.WriteLine($"Content: {response.Content}");
                 throw new HttpRequestException($"There was an error in the call to the server.");
             }
         }
