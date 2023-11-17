@@ -11,7 +11,7 @@ namespace weather_cli_csharp.Services
     {
         protected static RestClient client = null;
         private string API_URL = "http://api.openweathermap.org/";
-        private string API_KEY = "YOUR API KEY HERE";
+        private string API_KEY = "896d7ca05ae3d29c18cd4b2c9ed6a815";
 
         public WeatherService()
         {

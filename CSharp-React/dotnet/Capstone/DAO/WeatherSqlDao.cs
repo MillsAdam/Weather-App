@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Text;
 using weather_cli_csharp.Models;
 using Capstone.Models;
+using Npgsql;
 
 namespace WeatherDb.Cli.DAO
 {
@@ -16,13 +17,13 @@ namespace WeatherDb.Cli.DAO
             this.connectionString = connectionString;
         }
 
-        public WeatherObject createWeather(int zipcode, WeatherObject weather, LatLon latlon, User user)
+        public WeatherDBObject createWeather(string zipcode, WeatherObject weather, LatLon latlon, User user)
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 connection.Open();
 
-                SqlCommand command = connection.CreateCommand();
+                NpgsqlCommand command = connection.CreateCommand();
                 command.CommandText = @"INSERT INTO weather (user_id, zipcode, main, description, temperature)
                                         VALUES (@userId, @zipcode, @main, @description, @temperature);";
 

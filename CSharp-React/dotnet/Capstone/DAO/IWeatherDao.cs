@@ -8,7 +8,7 @@ namespace WeatherDb.Cli.DAO
 {
     public interface IWeatherDao
     {
-        WeatherObject createWeather(int zipcode, WeatherObject weather, LatLon latlon, User user);
+        WeatherDBObject createWeather(string zipcode, WeatherObject weather, LatLon latlon, User user);
 
         WeatherObject getWeatherByUser(User user);
 

@@ -2,7 +2,7 @@ USE master
 GO
 
 --drop database if it exists
-IF DB_ID('weather_fullstack') IS NOT NULL
+IF DB_ID('weather_fullstack_csharp') IS NOT NULL
 BEGIN
 	ALTER DATABASE weather_fullstack SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
 	DROP DATABASE weather_fullstack;

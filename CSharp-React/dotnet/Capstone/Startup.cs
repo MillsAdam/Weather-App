@@ -9,6 +9,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Capstone.DAO;
 using Capstone.Security;
+using weather_cli_csharp.Services;
+using Microsoft.EntityFrameworkCore;
+using Capstone.Data;
+using WeatherDb.Cli.DAO;
 
 namespace Capstone
 {
@@ -35,7 +39,16 @@ namespace Capstone
                     });
             });
 
-            string connectionString = Configuration.GetConnectionString("Project");
+            string connectionString = Configuration.GetConnectionString("DefaultConnection");
+
+            services.AddDbContext<ApplicationDbContext>(options => 
+                options.UseNpgsql(connectionString));
+
+            // Register your WeatherService here
+            services.AddTransient<WeatherService>();
+
+            // Add IWeatherDao service registration here
+            services.AddTransient<IWeatherDao, WeatherSqlDao>(m => new WeatherSqlDao(connectionString));
 
             // configure jwt authentication
             var key = Encoding.ASCII.GetBytes(Configuration["JwtSecret"]);
