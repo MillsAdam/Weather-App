@@ -1,4 +1,4 @@
-.login {
+.home {
     max-width: 320px;
     margin: 100px auto;
     padding: 30px;
@@ -10,7 +10,7 @@
     color: #fff;
 }
 
-.login h1 {
+.home h1 {
 
     margin-bottom: 24px;
 }

@@ -1,25 +1,22 @@
-import React, { useContext } from 'react';
+import { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
-const Logout = () => {
+function Logout() {
     const navigate = useNavigate();
     const { setAuthToken, setCurrentUser } = useContext(AuthContext);
 
-    const handleLogout = () => {
+    useEffect(() => {
         localStorage.removeItem('authToken');
+        localStorage.removeItem('currentUser');
 
         setAuthToken(null);
         setCurrentUser(null);
 
         navigate('/login');
-    };
+    }, [setAuthToken, setCurrentUser, navigate]);
 
-    return (
-        <div>
-            <button onClick={handleLogout}>Logout</button>
-        </div>
-    );
-};
+    return null;
+}
 
 export default Logout;

@@ -25,7 +25,8 @@ namespace WeatherDb.Cli.DAO
 
                 NpgsqlCommand command = connection.CreateCommand();
                 command.CommandText = @"INSERT INTO weather (user_id, zipcode, main, description, temperature)
-                                        VALUES (@userId, @zipcode, @main, @description, @temperature);";
+                                        VALUES (@userId, @zipcode, @main, @description, @temperature) 
+                                        RETURNING id;";
 
                 command.Parameters.AddWithValue("@userId", user.UserId);
                 command.Parameters.AddWithValue("@zipcode",zipcode);
@@ -33,9 +34,21 @@ namespace WeatherDb.Cli.DAO
                 command.Parameters.AddWithValue("@description", weather.weather[0].description);
                 command.Parameters.AddWithValue("@temperature", weather.main.temp);
 
-                command.ExecuteNonQuery();
+                // Removed this line because we are using RETURNING id in the query
+                // command.ExecuteNonQuery();
 
-                return null;
+                var insertedId = (int)command.ExecuteScalar();
+
+                WeatherDBObject weatherDBObject = new WeatherDBObject();
+
+                weatherDBObject.Id = insertedId;
+                weatherDBObject.UserId = user.UserId;
+                weatherDBObject.Zipcode = zipcode;
+                weatherDBObject.Main = weather.weather[0].main;
+                weatherDBObject.Description = weather.weather[0].description;
+                weatherDBObject.Temperature = weather.main.temp;
+
+                return weatherDBObject;
             }
         }
 

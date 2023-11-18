@@ -19,6 +19,8 @@ function Login() {
         try {
             const response = await AuthService.login(user);
             if (response.status === 200) {
+                localStorage.setItem('authToken', response.data.token);
+                localStorage.setItem('currentUser', JSON.stringify(response.data.user));
                 setAuthToken(response.data.token);
                 setCurrentUser(response.data.user);
                 navigate('/');

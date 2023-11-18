@@ -1,4 +1,4 @@
-.login {
+.weather {
     max-width: 320px;
     margin: 100px auto;
     padding: 30px;
@@ -10,7 +10,7 @@
     color: #fff;
 }
 
-.login h1 {
+.weather h1 {
 
     margin-bottom: 24px;
 }
@@ -68,3 +68,30 @@ input[type="submit"]:hover {
 .link-section a:hover {
     text-decoration: underline;
 }
+
+/* WeatherComponent Styles */
+/* WeatherComponent.css */
+.output {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.output p {
+    margin: 10px 0;
+}
+
+.weather-icon {
+    display: block;
+    margin: 20px auto;
+    width: 100px; /* adjust as needed */
+    height: auto;
+}
+
+
+

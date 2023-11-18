@@ -1,5 +1,6 @@
 import React from 'react';
 import WeatherComponent from '../components/WeatherComponent';
+import '../styles/Weather.css';
 
 function Weather() {
     return (

@@ -3,8 +3,14 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  /* height: 40vmin; */
   pointer-events: none;
+
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  animation: App-logo-spin infinite 20s linear;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -27,6 +33,7 @@
 .App-link {
   color: #61dafb;
   margin: 0 10px;
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
