@@ -30,12 +30,21 @@ namespace Capstone
         {
             services.AddControllers();
 
+            // services.AddCors(options =>
+            // {
+            //     options.AddDefaultPolicy(
+            //         builder =>
+            //         {
+            //             builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+            //         });
+            // });
+
             services.AddCors(options =>
             {
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+                        builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod().AllowCredentials();
                     });
             });
 
@@ -86,15 +95,24 @@ namespace Capstone
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseAuthentication();
+            // OLD CODE ORIGINAL
+            // app.UseAuthentication();
+            // app.UseHttpsRedirection();
+            // app.UseRouting();
+            // app.UseCors();
+            // app.UseAuthorization();
 
-            app.UseHttpsRedirection();
-
-            app.UseRouting();
-
+            // NEW CODE REFORMATTED
+            // Use Cors must be placed before UseRouting
             app.UseCors();
 
+            // UseHttpsRedirection must be placed after UseCors
+            // app.UseHttpsRedirection();
+
+            app.UseRouting();
+            app.UseAuthentication(); // Authentication should be before Authorization
             app.UseAuthorization();
+            // NEW CODE REFORMATTED
 
             app.UseEndpoints(endpoints =>
             {
