@@ -12,19 +12,19 @@ function NavigationBar() {
 
   return (
     <nav>
-    {authToken && (
-        <>
-        <Link to="/" className="App-link">Home</Link>{" | "}
-        <Link to="/weather" className="App-link">Weather</Link>{" | "}
-        <span onClick={handleLogoutClick} className="App-link" style={{ cursor: 'pointer' }}>Logout</span>
-        </>
-    )}
-    {!authToken && (
-        <>
-        <Link to="/login" className="App-link">Login</Link>{" | "}
-        <Link to="/register" className="App-link">Register</Link>
-        </>
-    )}
+      {authToken && (
+          <>
+            <Link to="/" className="App-link">Home</Link>{" | "}
+            <Link to="/weather" className="App-link">Weather</Link>{" | "}
+            <span onClick={handleLogoutClick} className="App-link" style={{ cursor: 'pointer' }}>Logout</span>
+          </>
+      )}
+      {!authToken && (
+          <>
+            <Link to="/login" className="App-link">Login</Link>{" | "}
+            <Link to="/register" className="App-link">Register</Link>
+          </>
+      )}
     </nav>
   );
 }
